@@ -1,0 +1,23 @@
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --button-hover: #2b2b2b;
+}
+
+.sun-theme {
+  --background: #ffe142;
+  --foreground: #000000;
+  --button-hover: #2b2b2b;
+}
+
+.sky-theme {
+  --background: #42c6ff;
+  --foreground: #000000;
+  --button-hover: #2b2b2b;
+}
+
+.moon-theme {
+  --background: #1a1f2b;
+  --foreground: #e0e7ff;
+  --button-hover: #b1b6c5;
+}
