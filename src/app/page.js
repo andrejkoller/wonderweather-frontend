@@ -1,7 +1,11 @@
 "use client";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useRouter } from "next/navigation";
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col justify-end items-center h-screen w-full">
       <div className="flex flex-col justify-center items-center mb-18 w-5/6">
@@ -13,7 +17,11 @@ const Home = () => {
           </p>
         </div>
         <div className="w-full">
-          <button className="flex justify-between items-center text-lg py-4 px-5 rounded-2xl w-full">
+          <button
+            type="button"
+            className="intro-btn flex justify-between items-center text-lg py-4 px-5 rounded-2xl w-full"
+            onClick={() => router.push("/dashboard")}
+          >
             Get Started <ArrowForwardIcon />
           </button>
         </div>

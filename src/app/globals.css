@@ -1,25 +1,42 @@
 @import "tailwindcss";
-@import "./themes/theme.css";
+@import "../themes/theme.css";
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: "Geist", Arial, sans-serif;
   max-width: 425px;
   height: 100vh;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  box-sizing: border-box;
 }
 
-button {
+.intro-btn {
   background-color: var(--foreground);
   color: var(--background);
   cursor: pointer;
 }
 
-button:hover {
+.intro-btn:hover {
   background-color: var(--button-hover);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  transition: left 0.3s ease-out;
+  z-index: 100;
+  background-color: var(--background);
+}
+
+.menu.open {
+  left: 0;
+}
+
+.menu-navigation ul li {
+  font-size: 50px;
 }
 
 ::selection {
