@@ -1,17 +1,17 @@
 "use client";
 
-import Image from "next/image";
+import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "./Menu";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const handleMenuOpenClick = () => {
-    const menuIcon = document.getElementById("menuIcon");
-
-    menuIcon.addEventListener("click", () => {
-      const menu = document.querySelector(".menu");
-      menu.classList.add("open");
-    });
+    const menu = document.querySelector(".menu");
+    menu.classList.add("open");
   };
+
+  const pathname = usePathname();
+  const path = pathname.split("/").pop();
 
   return (
     <div className="flex flex-row">
@@ -19,19 +19,18 @@ const Header = () => {
         <Menu />
       </div>
       <div className="flex flex-col justify-between items-center h-24 w-full">
-        <div className="flex flex-row justify-content-between items-center h-full w-full">
+        <div className="flex flex-row justify-between items-center h-full w-full">
           <div
             id="menuIcon"
             className="cursor-pointer"
-            onClick={() => handleMenuOpenClick()}
+            onClick={handleMenuOpenClick}
           >
-            <Image
-              src={"/icons/menu.svg"}
-              alt="menu-icon"
-              width={"50"}
-              height={"50"}
-              color="black"
-            ></Image>
+            <MenuIcon />
+          </div>
+          <div>
+            <span className="text-2xl font-bold">
+              {path.charAt(0).toUpperCase() + path.slice(1)}
+            </span>
           </div>
         </div>
       </div>

@@ -4,6 +4,12 @@
   --button-hover: #2b2b2b;
 }
 
+.light-theme {
+  --background: #ffffff;
+  --foreground: #000000;
+  --button-hover: #2b2b2b;
+}
+
 .sun-theme {
   --background: #ffe142;
   --foreground: #000000;

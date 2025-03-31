@@ -1,14 +1,12 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Menu = () => {
   const handleMenuCloseClick = () => {
-    const closeIcon = document.getElementById("closeIcon");
-
-    closeIcon.addEventListener("click", () => {
-      const menu = document.querySelector(".menu");
-      menu.classList.remove("open");
-    });
+    const menu = document.querySelector(".menu");
+    menu.classList.remove("open");
   };
 
   return (
@@ -17,27 +15,21 @@ const Menu = () => {
         <div
           id="closeIcon"
           className="cursor-pointer"
-          onClick={() => handleMenuCloseClick()}
+          onClick={handleMenuCloseClick}
         >
-          <Image
-            src={"/icons/close.svg"}
-            alt="menu-icon"
-            width={"50"}
-            height={"50"}
-            color="black"
-          ></Image>
+          <CloseIcon />
         </div>
       </div>
       <div className="menu-navigation flex flex-col h-full w-full text-center">
         <ul>
-          <li>
+          <li className="my-5 border-3">
             <Link href={"/"}>Home</Link>
           </li>
-          <li>
+          <li className="my-5 border-3">
             <Link href={"/dashboard"}>Dashboard</Link>
           </li>
-          <li>
-            <Link href={"/settings"}>Settings</Link>
+          <li className="my-5 border-3">
+            <Link href={"/dashboard/settings"}>Settings</Link>
           </li>
         </ul>
       </div>
