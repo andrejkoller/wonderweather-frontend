@@ -6,7 +6,9 @@ import CloseIcon from "@mui/icons-material/Close";
 const Menu = () => {
   const handleMenuCloseClick = () => {
     const menu = document.querySelector(".menu");
-    menu.classList.remove("open");
+    if (menu) {
+      menu.classList.remove("open");
+    }
   };
 
   return (
@@ -22,13 +24,13 @@ const Menu = () => {
       </div>
       <div className="menu-navigation flex flex-col h-full w-full text-center">
         <ul>
-          <li className="my-5 border-3">
+          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
             <Link href={"/"}>Home</Link>
           </li>
-          <li className="my-5 border-3">
+          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
             <Link href={"/dashboard"}>Dashboard</Link>
           </li>
-          <li className="my-5 border-3">
+          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
             <Link href={"/dashboard/settings"}>Settings</Link>
           </li>
         </ul>

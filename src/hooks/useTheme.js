@@ -1,20 +1,28 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 const useTheme = () => {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "light-theme";
-    }
-    return "light-theme";
-  });
+  const [theme, setTheme] = useState("light-theme");
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      const storedTheme = localStorage.getItem("theme") || "light-theme";
+      setTheme(storedTheme);
+    }
+  }, [isClient]);
+
+  useEffect(() => {
+    if (isClient) {
       document.documentElement.className = theme;
       localStorage.setItem("theme", theme);
     }
-  }, [theme]);
+  }, [theme, isClient]);
 
   const setLightTheme = () => setTheme("light-theme");
   const setSunTheme = () => setTheme("sun-theme");

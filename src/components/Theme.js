@@ -7,6 +7,7 @@ const Theme = () => {
   const { theme, setLightTheme, setSunTheme, setSkyTheme, setMoonTheme } =
     useTheme();
 
+
   const handleThemeChange = (event) => {
     const selectedTheme = event.target.value;
     switch (selectedTheme) {
@@ -28,7 +29,7 @@ const Theme = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center h-24 w-full">
       <FormControl className="w-full">
         <Select value={theme} label="Theme" onChange={handleThemeChange}>
           <MenuItem value="light-theme">Light</MenuItem>

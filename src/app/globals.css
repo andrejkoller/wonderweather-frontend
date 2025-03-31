@@ -53,14 +53,9 @@ body {
 }
 
 .page-title {
-  background: var(--foreground);
-  color: var(--background);
-  padding: 10px 15px;
+  padding: 15px 25px;
   border-radius: 999px;
-}
-
-.page-title p {
-  font-size: 16px;
+  background-color: #000000;
 }
 
 .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
