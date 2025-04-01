@@ -1,6 +1,6 @@
 "use client";
 
-import useTheme from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/useTheme";
 import { Button } from "@mui/material";
 import BoltIcon from "@mui/icons-material/Bolt";
 import SunnyIcon from "@mui/icons-material/WbSunny";

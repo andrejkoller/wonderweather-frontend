@@ -19,16 +19,24 @@ const useFontSize = () => {
 
   useEffect(() => {
     if (isClient) {
-      const dashboardFont = document.querySelector(".dashboard");
-      if (dashboardFont) {
-        dashboardFont.style.fontSize =
-          fontSize === "small"
-            ? "0.8em"
-            : fontSize === "medium"
-            ? "1em"
-            : fontSize === "large"
-            ? "1.2em"
-            : "1em";
+      const dashboardFont = document.querySelectorAll(".font-size-dashboard");
+      if (dashboardFont.length > 0) {
+        dashboardFont.forEach((dFont) => {
+          dFont.classList.remove("text-sm", "text-lg", "text-2xl", "text-3xl");
+          switch (fontSize) {
+            case "small":
+              dFont.classList.add("text-sm");
+              break;
+            case "medium":
+              dFont.classList.add("text-lg");
+              break;
+            case "large":
+              dFont.classList.add("text-2xl", "text-3xl");
+              break;
+            default:
+              break;
+          }
+        });
       }
       localStorage.setItem("fontSize", fontSize);
     }

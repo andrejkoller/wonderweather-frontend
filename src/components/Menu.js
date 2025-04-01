@@ -51,6 +51,9 @@ const Menu = () => {
           <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
             <Link href={"/dashboard/settings"}>Settings</Link>
           </li>
+          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
+            <Link href={"/dashboard/system-settings"}>System</Link>
+          </li>
         </ul>
       </div>
     </div>

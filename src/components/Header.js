@@ -1,17 +1,34 @@
 "use client";
 
+import React from "react";
+import { useWeatherData } from "@/hooks/useWeatherData";
 import MenuIcon from "@mui/icons-material/Menu";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
+import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 import Menu from "./Menu";
 import { usePathname } from "next/navigation";
 
-const Header = () => {
+const Header = ({ city }) => {
+  const { weatherData, loading, error } = useWeatherData(city);
+  const pathname = usePathname();
+
   const handleMenuOpenClick = () => {
     const menu = document.querySelector(".menu");
     menu.classList.add("open");
   };
 
-  const pathname = usePathname();
-  const path = pathname.split("/").pop();
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!weatherData) {
+    return <div>No weather data available</div>;
+  }
 
   return (
     <div className="flex flex-row">
@@ -22,15 +39,25 @@ const Header = () => {
         <div className="flex flex-row justify-between items-center h-full w-full">
           <div
             id="menuIcon"
-            className="cursor-pointer"
+            className="flex flex-row justify-start items-center cursor-pointer"
             onClick={handleMenuOpenClick}
           >
             <MenuIcon />
           </div>
-          <div>
-            <span className="text-2xl font-bold">
-              {path.charAt(0).toUpperCase() + path.slice(1)}
-            </span>
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="loc-name-font font-bold">
+              {pathname === "/dashboard" && weatherData?.location?.name}
+            </h2>
+          </div>
+          <div
+            id="pathNameIcon"
+            className="flex flex-row justify-start items-center cursor-pointer"
+          >
+            {pathname === "/dashboard" && <LocationOnIcon />}
+            {pathname === "/dashboard/settings" && <DisplaySettingsIcon />}
+            {pathname === "/dashboard/system-settings" && (
+              <AppSettingsAltIcon />
+            )}
           </div>
         </div>
       </div>

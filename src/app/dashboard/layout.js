@@ -5,7 +5,7 @@ const DashboardLayout = ({ children }) => {
   return (
     <div>
       <div className="header">
-        <Header />
+        <Header city="New York" />
       </div>
       <div>{children}</div>
     </div>

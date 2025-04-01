@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const useTheme = () => {
+export const useTheme = () => {
   const [theme, setTheme] = useState("light-theme");
   const [isClient, setIsClient] = useState(false);
 
@@ -31,5 +31,3 @@ const useTheme = () => {
 
   return { theme, setLightTheme, setSunTheme, setSkyTheme, setMoonTheme };
 };
-
-export default useTheme;
