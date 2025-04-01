@@ -1,3 +1,5 @@
+"use client";
+
 import useFontSize from "@/hooks/useFontSize";
 
 const Dashboard = () => {

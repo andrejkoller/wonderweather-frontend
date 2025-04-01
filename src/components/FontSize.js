@@ -34,39 +34,37 @@ const FontSize = () => {
   };
 
   return (
-    <div>
-      <div className="flex flex-row justify-between items-center h-24 w-full">
-        <div>
-          <Button
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              padding: "15px 25px",
-            }}
-            variant="contained"
-            disabled={fontSize === "small" ? true : false}
-            onClick={handleDecreaseFontSize}
-          >
-            <RemoveIcon />
-          </Button>
-        </div>
-        <div>
-          <p className="text-lg font-bold">{fontSize}</p>
-        </div>
-        <div>
-          <Button
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              padding: "15px 25px",
-            }}
-            variant="contained"
-            disabled={fontSize === "large" ? true : false}
-            onClick={handleIncreaseFontSize}
-          >
-            <AddIcon />
-          </Button>
-        </div>
+    <div className="flex flex-row justify-between items-center border-3 rounded-b-sm rounded-t-sm p-3 h-24 w-full">
+      <div>
+        <Button
+          sx={{
+            backgroundColor: "black",
+            color: "white",
+            padding: "15px 25px",
+          }}
+          variant="contained"
+          disabled={fontSize === "small" ? true : false}
+          onClick={handleDecreaseFontSize}
+        >
+          <RemoveIcon />
+        </Button>
+      </div>
+      <div>
+        <p className="text-lg font-bold">{fontSize}</p>
+      </div>
+      <div>
+        <Button
+          sx={{
+            backgroundColor: "black",
+            color: "white",
+            padding: "15px 25px",
+          }}
+          variant="contained"
+          disabled={fontSize === "large" ? true : false}
+          onClick={handleIncreaseFontSize}
+        >
+          <AddIcon />
+        </Button>
       </div>
     </div>
   );
