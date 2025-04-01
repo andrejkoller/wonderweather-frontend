@@ -35,8 +35,8 @@ const Theme = () => {
       <div className="flex flex-row justify-between items-center w-full">
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"
@@ -47,8 +47,8 @@ const Theme = () => {
         </Button>
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"
@@ -59,8 +59,8 @@ const Theme = () => {
         </Button>
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"
@@ -71,8 +71,8 @@ const Theme = () => {
         </Button>
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"

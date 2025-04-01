@@ -1,6 +1,6 @@
 "use client";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
 const Home = () => {
@@ -17,13 +17,14 @@ const Home = () => {
           </p>
         </div>
         <div className="w-full">
-          <button
+          <Button
             type="button"
-            className="intro-btn flex justify-between items-center text-lg py-4 px-5 rounded-2xl w-full"
+            variant="contained"
+            className="s-btn w-full"
             onClick={() => router.push("/dashboard")}
           >
-            Get Started <ArrowForwardIcon />
-          </button>
+            Get Started
+          </Button>
         </div>
       </div>
     </div>

@@ -9,8 +9,8 @@ import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 import Menu from "./Menu";
 import { usePathname } from "next/navigation";
 
-const Header = ({ city }) => {
-  const { weatherData, loading, error } = useWeatherData(city);
+const Header = ({ cityName }) => {
+  const { weatherData, loading, error } = useWeatherData();
   const pathname = usePathname();
 
   const handleMenuOpenClick = () => {
@@ -46,7 +46,7 @@ const Header = ({ city }) => {
           </div>
           <div className="flex flex-col justify-center items-center">
             <h2 className="loc-name-font font-bold">
-              {pathname === "/dashboard" && weatherData?.location?.name}
+              {pathname === "/dashboard" && cityName}
             </h2>
           </div>
           <div
@@ -54,9 +54,9 @@ const Header = ({ city }) => {
             className="flex flex-row justify-start items-center cursor-pointer"
           >
             {pathname === "/dashboard" && <LocationOnIcon />}
-            {pathname === "/dashboard/settings" && <DisplaySettingsIcon />}
+            {pathname === "/dashboard/settings" && <AppSettingsAltIcon />}
             {pathname === "/dashboard/system-settings" && (
-              <AppSettingsAltIcon />
+              <DisplaySettingsIcon />
             )}
           </div>
         </div>

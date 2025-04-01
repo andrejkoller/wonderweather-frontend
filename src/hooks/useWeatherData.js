@@ -1,18 +1,27 @@
 import { fetchCurrentWeather } from "@/app/api/weather";
 import { useState, useEffect } from "react";
 
-export const useWeatherData = (city) => {
+export const useWeatherData = () => {
+  const [cityName, setCityName] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedCityName = localStorage.getItem("cityName") || "London";
+      if (storedCityName) {
+        setCityName(storedCityName);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     const getWeatherData = async () => {
       setLoading(true);
       try {
-        const data = await fetchCurrentWeather(city);
+        const data = await fetchCurrentWeather(cityName);
         setWeatherData(data);
-        console.log("Fetched data:", data);
         setError(null);
       } catch (err) {
         console.error("Error fetching weather data:", err);
@@ -22,10 +31,10 @@ export const useWeatherData = (city) => {
       }
     };
 
-    if (city) {
+    if (cityName) {
       getWeatherData();
     }
-  }, [city]);
+  }, [cityName]);
 
-  return { weatherData, loading, error };
+  return { cityName, weatherData, loading, error };
 };

@@ -42,16 +42,16 @@ const Menu = () => {
       </div>
       <div className="menu-navigation flex flex-col h-full w-full text-center">
         <ul>
-          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
+          <li className="my-5">
             <Link href={"/"}>Home</Link>
           </li>
-          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
+          <li className="my-5">
             <Link href={"/dashboard"}>Dashboard</Link>
           </li>
-          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
+          <li className="my-5">
             <Link href={"/dashboard/settings"}>Settings</Link>
           </li>
-          <li className="my-5 border-3 rounded-b-sm rounded-t-sm">
+          <li className="my-5">
             <Link href={"/dashboard/system-settings"}>System</Link>
           </li>
         </ul>

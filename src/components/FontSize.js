@@ -38,8 +38,8 @@ const FontSize = () => {
       <div>
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"
@@ -55,8 +55,8 @@ const FontSize = () => {
       <div>
         <Button
           sx={{
-            backgroundColor: "black",
-            color: "white",
+            backgroundColor: "var(--foreground)",
+            color: "var(--background)",
             padding: "15px 25px",
           }}
           variant="contained"

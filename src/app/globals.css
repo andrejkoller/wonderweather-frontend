@@ -12,14 +12,20 @@ body {
   padding: 0;
 }
 
-.intro-btn {
-  background-color: var(--foreground);
-  color: var(--background);
+.s-btn {
+  background-color: var(--foreground) !important;
+  color: var(--background) !important;
+  padding: 10px 25px !important;
+  border-radius: 4px !important;
   cursor: pointer;
 }
 
-.intro-btn:hover {
-  background-color: var(--button-hover);
+.s-btn:hover {
+  background-color: var(--button-hover) !important;
+}
+
+.d-body {
+  height: calc(100% - 96px);
 }
 
 #menuIcon svg {
@@ -55,12 +61,16 @@ body {
 
 .menu-navigation ul li {
   font-size: 50px;
+  background-color: var(--foreground);
+  color: var(--background);
+  border-radius: 4px;
 }
 
 .page-title {
   padding: 15px 25px;
   border-radius: 999px;
-  background-color: #000000;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
@@ -84,6 +94,20 @@ body {
   align-items: center;
 }
 
+.css-5h82ro-MuiInputBase-root-MuiInput-root {
+  border: 3px solid var(--foreground);
+  color: var(--foreground) !important;
+}
+
+.css-1yrc8ca-MuiInputBase-input-MuiInput-input {
+  font-weight: bold !important;
+  color: var(--foreground) !important;
+}
+
+.css-1yrc8ca-MuiInputBase-input-MuiInput-input::after {
+  border-bottom: 0;
+}
+
 h2.loc-name-font {
   font-size: 1.5em;
 }
@@ -92,16 +116,34 @@ p.loc-time-font {
   font-size: 1.1em;
   padding: 10px 25px;
   border-radius: 999px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--foreground);
+  color: var(--background);
 }
 
 p.cond-text-font {
   font-size: 1.5em;
 }
 
-p.cur-temp-font {
+.temp-numb {
   font-size: 10em;
+}
+
+.degree {
+  position: absolute;
+  top: 178px;
+  font-size: 8em;
+}
+
+.asp-card {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 20px 25px;
+  border-radius: 4px;
+}
+
+.asp-card svg {
+  width: 32px;
+  height: 32px;
 }
 
 ::selection {
